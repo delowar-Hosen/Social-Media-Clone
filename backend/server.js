@@ -13,6 +13,7 @@ mongoose.connect(process.env.MONGODB_URL).then(() => {
 
 // middlware
 app.use(cors());
+app.use(express.json());
 
 // routers
 readdirSync("./routes").map((f) => app.use("/", require("./routes/" + f)));
