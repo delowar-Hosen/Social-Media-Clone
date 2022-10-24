@@ -6,12 +6,7 @@ const auth_link = "https://developers.google.com/oauthplayground";
 
 const { EMAIL, MAILING_ID, MAILING_SECRET, MAILING_REFRESH } = process.env;
 
-const auth = new OAuth2({
-  MAILING_ID,
-  MAILING_SECRET,
-  MAILING_REFRESH,
-  auth_link,
-});
+const auth = new OAuth2(MAILING_ID, MAILING_SECRET, MAILING_REFRESH, auth_link);
 
 exports.sendEmailVerification = (email, name, url) => {
   auth.setCredentials({

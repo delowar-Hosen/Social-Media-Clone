@@ -7,6 +7,7 @@ const bcrypt = require("bcrypt");
 const User = require("../models/User.js");
 const { generateToken } = require("../helpers/token.js");
 const { sendEmailVerification } = require("../helpers/mailer.js");
+const jwt = require("jsonwebtoken");
 
 exports.register = async (req, res) => {
   try {
@@ -82,8 +83,59 @@ exports.register = async (req, res) => {
       first_name: user.first_name,
       last_name: user.last_name,
       token,
-      varified:user.varified,
-      message:"Register sucess ! Active your email to start"
+      varified: user.varified,
+      message: "Register sucess ! Active your email to start",
+    });
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+exports.activeAccount = async (req, res) => {
+  try {
+    const { token } = req.body;
+    console.log(token);
+
+    const user = jwt.verify(token, process.env.TOKEN_SECRET);
+    const check = await User.findById(user.id);
+
+    if (check == true) {
+      return res
+        .status(400)
+        .json({ message: "This account has already activated" });
+    } else {
+      await User.findByIdAndUpdate(user.id, { varified: true });
+      return res.status(200).json({ message: "Account is activated" });
+    }
+  } catch (error) {
+    return res.status(500).json({ message: error.message });
+  }
+};
+exports.login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+
+    const user = await User.findOne({ email });
+    if (!user) {
+      res
+        .status(400)
+        .json({ message: "This email is not connected any account" });
+    }
+
+    const check = await bcrypt.compare(password, user.password);
+    if (!check) {
+      res.status(400).json({ message: "Invalid password,Try again" });
+    }
+
+    const token = generateToken({ id: user._id.toString() }, "7d");
+    res.send({
+      id: user._id,
+      username: user.username,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      token,
+      varified: user.varified,
+      message: "Login sucess ! ",
     });
   } catch (error) {
     return res.status(500).json({ message: error.message });
