@@ -1,19 +1,18 @@
 const express = require("express");
 var cors = require("cors");
 const mongoose = require("mongoose");
-const dotenv = require("dotenv").config();
-const user = require("./routes/user.js");
 const { readdirSync } = require("fs");
 const app = express();
+
+// middlware
+require("dotenv").config();
+app.use(cors());
+app.use(express.json());
 
 // mongodb connect
 mongoose.connect(process.env.MONGODB_URL).then(() => {
   console.log("Database Connected");
 });
-
-// middlware
-app.use(cors());
-app.use(express.json());
 
 // routers
 readdirSync("./routes").map((f) => app.use("/", require("./routes/" + f)));
