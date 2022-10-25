@@ -23,6 +23,7 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 17px;
+    border: 0;
 }
 
 
@@ -78,4 +79,15 @@ margin-bottom: 25px;
     background: #36A421;
     color: #fff;
     text-align: center;
+}
+
+.relative{
+    position: relative;
+}
+
+.absulate{
+    position: absolute;
+    top: 13px;
+    right: 10px;
+    cursor: pointer;
 }

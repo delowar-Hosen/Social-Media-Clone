@@ -2,8 +2,13 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    maxWidth: {
-      loginContainer:"980px"
+    extend: {
+      maxWidth: {
+        loginContainer: "980px",
+      },
+      fontFamily: {
+        roboto: ["Roboto", "sans - serif"],
+      },
     },
   },
   plugins: [],
