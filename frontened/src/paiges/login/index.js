@@ -90,7 +90,11 @@ const Login = () => {
                 placeholder="Password"
                 onChange={handlePassword}
               />
-              <RiEyeCloseFill RiEyeFill onClick={showPassword} className="absulate" />
+              <RiEyeCloseFill
+                RiEyeFill
+                onClick={showPassword}
+                className="absulate"
+              />
             </div>
           )}
 
