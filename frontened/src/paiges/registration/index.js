@@ -4,8 +4,10 @@ import { RiEyeCloseFill, RiEyeFill } from "react-icons/ri";
 import { FaAngleDown } from "react-icons/fa";
 import "../registration/registration.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Registration = () => {
+  const navigate=useNavigate()
   const [firstName, setFirstName] = useState("");
   const [firstNameErr, setFirstNameErr] = useState("");
   const [lastName, setLastName] = useState("");
@@ -23,6 +25,7 @@ const Registration = () => {
   const [gender, setGender] = useState("");
   const [genderErr, setGenderErr] = useState("");
   const [err, setErr] = useState("");
+  const [success, setSuccess] = useState("");
 
   let handleFirstname = (e) => {
     setFirstName(e.target.value);
@@ -132,6 +135,12 @@ const Registration = () => {
         gender: gender,
       });
       console.log(data);
+      setErr("");
+      setSuccess(data.message);
+      setTimeout(() => {
+        setSuccess("")
+        navigate("/login")
+      },2000);
     } catch (error) {
       setErr(error.response.data.message);
     }
@@ -345,6 +354,11 @@ const Registration = () => {
           {err && (
             <p className="bg-red-500 p-1.5 mt-[2px] mb-3.5 text-left rounded text-white font-roboto font-regular ">
               {err}
+            </p>
+          )}
+          {success && (
+            <p className="bg-green-400 p-1.5 mt-[2px] mb-3.5 text-left rounded text-white font-roboto font-regular ">
+              {success}
             </p>
           )}
           <Link to="/" className="forgot">
