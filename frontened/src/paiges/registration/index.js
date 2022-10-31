@@ -365,7 +365,7 @@ const Registration = () => {
             Forgotten password?
           </Link>
           <div className="line"></div>
-          <Link to="/" className="create-button">
+          <Link to="/login" className="create-button">
             Already have an account ?
           </Link>
         </div>

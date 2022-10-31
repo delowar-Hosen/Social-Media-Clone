@@ -117,14 +117,14 @@ exports.login = async (req, res) => {
 
     const user = await User.findOne({ email });
     if (!user) {
-      res
+      return res
         .status(400)
         .json({ message: "This email is not connected any account" });
     }
 
     const check = await bcrypt.compare(password, user.password);
     if (!check) {
-      res.status(400).json({ message: "Invalid password,Try again" });
+      return res.status(400).json({ message: "Invalid password,Try again" });
     }
 
     const token = generateToken({ id: user._id.toString() }, "7d");

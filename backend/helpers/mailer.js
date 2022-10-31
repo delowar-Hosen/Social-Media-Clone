@@ -1,18 +1,16 @@
 const nodemailer = require("nodemailer");
 
-const { EMAIL } = process.env;
-
 exports.sendEmailVerification = (email, name, url) => {
   const stmp = nodemailer.createTransport({
     service: "gmail",
 
     auth: {
-      user: EMAIL,
-      password: "qlrwhjnezjluufkp",
+      user: process.env.EMAIL,
+      pass: "qlrwhjnezjluufkp",
     },
   });
   const mailOptions = {
-    from: EMAIL,
+    from: process.env.EMAIL,
     to: email,
     subject: "Email Verification Link",
     html: `<div
