@@ -1,0 +1,59 @@
+.photos {
+  max-width: 283px;
+  padding: 19px 29px;
+  border-radius: 15px;
+  background: #ffffff;
+  margin-top: 15px;
+}
+
+.photosHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.photosHeader h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3e3f5e;
+  text-transform: capitalize;
+}
+
+.imageHolder {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 15px;
+}
+
+.images {
+  width: 46%;
+  border-radius: 15px;
+  display: block;
+}
+
+.imagesRemain {
+    width: 105px;
+    height: 100px;
+    border-radius: 15px;
+    background: #41EFFFCC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageCount{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.totalCount{
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color:#23D2E2;
+    padding-left: 7px;
+}

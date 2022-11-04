@@ -1,0 +1,57 @@
+.profile{
+    background: #ffffff;
+    height: 100vh;
+}
+.profileCoverPic {
+  width: 100%;
+  height: 75px;
+  background-size: cover;
+}
+
+.profilePic {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+.profileInfo {
+  margin-top: 75px;
+  text-align: center;
+}
+
+.profileDescInfo {
+  margin-right: 24px;
+  text-align: center;
+}
+
+.line-2 {
+  width: 1px;
+  height: 25px;
+  background: #afb0c0;
+  margin-top: 15px;
+  margin-right: 24px;
+}
+
+.profileLink{
+    padding-left: 24px;
+}
+
+.profileLink li {
+  display: flex;
+  column-gap: 24px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #AFB0C0;
+  padding: 12px 15px;
+  transition: 0.4s;
+}
+
+.profileLink li:hover{
+    background: #23D2E2;
+    color: #fff;
+    border-radius: 10px;
+}

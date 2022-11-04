@@ -1,0 +1,124 @@
+nav {
+  display: flex;
+  background: #615dfa;
+  justify-content: center;
+}
+
+.logo {
+  display: flex;
+  width: 24%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.menu {
+  display: flex;
+  max-width: 76%;
+}
+
+.logo-img {
+  margin-left: 24px;
+}
+
+.logo-bar {
+  margin-left: 170px;
+  font-size: 17px;
+  color: #fff;
+  padding-top: 12px;
+}
+
+.menu-name {
+  margin-left: 49px;
+  padding-top: 30px;
+}
+.menu-name li {
+  display: inline-block;
+}
+
+.search-box {
+  padding: 15px;
+  border-radius: 11px;
+  max-width: 415px;
+  background: #4e4ac8;
+  color: #fff;
+  margin-left: 50px;
+}
+
+.search-box::placeholder {
+  color: #6965e0;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+
+.search-icon {
+  position: absolute;
+  top: 40px;
+  right: 18px;
+  color: #6965e0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.exp-line {
+  width: 100%;
+  height: 3px;
+  background: #4e4ac8;
+  position: relative;
+  border-radius: 3px;
+}
+
+.exp-line::after {
+  position: absolute;
+  content: "";
+  width: 70%;
+  height: 3px;
+  background: #41efff;
+  border-radius: 7px;
+}
+.line {
+  width: 1px;
+  height: 32px;
+  background: #7a77fd;
+  margin-left: 30px;
+  margin-top: 27px;
+  margin-bottom: 21px;
+}
+
+.cart-icon {
+  font-size: 18px;
+  color: #7a77fd;
+}
+
+.goods-count {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  color: #4e4ac8;
+  font-size: 6px;
+}
+
+.goods-count2 {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  color: #4e4ac8;
+  font-size: 6px;
+}
+
+.goods-count3 {
+  position: absolute;
+  top: 10px;
+  right: 1px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #41efff;
+  font-size: 12px;
+}
+
+.tool-icon {
+  font-size: 18px;
+  color: #7a77fd;
+  margin-left: 30px;
+  margin-right: 23px;
+}

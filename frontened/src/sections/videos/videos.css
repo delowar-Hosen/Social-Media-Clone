@@ -1,0 +1,52 @@
+.videos {
+  max-width: 283px;
+  padding: 19px 29px;
+  border-radius: 15px;
+  background: #ffffff;
+  margin-top: 15px;
+}
+
+.videosHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 17px;
+}
+
+.videosHeader h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3e3f5e;
+  text-transform: capitalize;
+}
+
+.totalVideosCount {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  color: #23d2e2;
+  padding-left: 7px;
+}
+
+.video {
+  width: 100%;
+  height: 100px;
+  background: #3e3f5e;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 19px;
+}
+
+.play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #23d2e2;
+  border-radius: 50%;
+  background: #fff;
+  color: #3e3f5e;
+}
